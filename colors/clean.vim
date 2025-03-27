@@ -3,7 +3,7 @@
 "
 " To install for 
 " 1. Vim: copy to ~/.vim/colors dir
-" 2. Neovim: 
+" 2. Neovim: use your favorite package manager, e.g. with Lazy: { "NateEbling/clean.vim" }
 
 " Setup
 hi clear
