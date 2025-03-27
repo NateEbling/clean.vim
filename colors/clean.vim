@@ -23,7 +23,7 @@ let s:col.orange       = ['#800080', 0]
 let s:col.white        = ['#FFFFFF', 0]
 let s:col.red          = ['#FF0000', 0]
 let s:col.lgrey        = ['#EDEDED', 0]
-let s:col.lgrey2       = ['#BCBCB7', 0]
+let s:col.dgrey        = ['#cecacd', 0]
 let s:col.none         = ['NONE', 'NONE']
 let s:underline        = 'underline'
 
@@ -80,9 +80,15 @@ call s:HL('Statement', 'black', 'none')
 call s:HL('StatusLine', 'white', 'black')
 call s:HL('LineNr', 'black', 'none')
 call s:HL('MatchParen', 'black', 'none')
-call s:HL('CursorLine', 'none', 'lgrey')
-call s:HL('Cursor', 'black', 'lgrey2')
+call s:HL('CursorLine', 'none', 'none')
+call s:HL('Cursor', 'black', 'dgrey')
+call s:HL('Search', 'black', 'orange')
+call s:HL('DiffChange', 'black', 'orange')
+call s:HL('DiffText', 'black', 'none')
+call s:HL('SpellBad', 'red', 'none')
+call s:HL('QuickFixLine', 'orange', 'none')
 
+" Treesitter
 if has('nvim')
     call s:HL('@punctuation', 'black', 'none')
     call s:HL('@variable', 'black', 'none')
