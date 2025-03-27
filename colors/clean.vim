@@ -23,7 +23,7 @@ let s:col.orange       = ['#800080', 0]
 let s:col.white        = ['#FFFFFF', 0]
 let s:col.red          = ['#FF0000', 0]
 let s:col.lgrey        = ['#EDEDED', 0]
-let s:col.lgrey2       = ['#F2EFF2', 0]
+let s:col.lgrey2       = ['#E3E5E3', 0]
 let s:col.none         = ['NONE', 'NONE']
 let s:underline        = 'underline'
 
