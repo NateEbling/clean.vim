@@ -23,7 +23,7 @@ let s:col.orange       = ['#800080', 0]
 let s:col.white        = ['#FFFFFF', 0]
 let s:col.red          = ['#FF0000', 0]
 let s:col.lgrey        = ['#EDEDED', 0]
-let s:col.dgrey        = ['#727272', 0]
+let s:col.lgrey2       = ['#F2EFF2', 0]
 let s:col.none         = ['NONE', 'NONE']
 let s:underline        = 'underline'
 
@@ -81,7 +81,7 @@ call s:HL('StatusLine', 'white', 'black')
 call s:HL('LineNr', 'black', 'none')
 call s:HL('MatchParen', 'black', 'none')
 call s:HL('CursorLine', 'none', 'lgrey')
-call s:HL('Cursor', 'none', 'black')
+call s:HL('Cursor', 'none', 'lgrey2')
 
 if has('nvim')
     call s:HL('@punctuation', 'black', 'none')
