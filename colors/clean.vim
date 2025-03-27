@@ -68,7 +68,7 @@ endfunction
 
 " Highlights
 call s:HL('Normal', 'black', 'none')
-call s:HL('NonText', 'black', 'white')
+call s:HL('NonText', 'black', 'none')
 call s:HL('Special', 'black', 'none')
 call s:HL('Directory', 'black', 'none')
 call s:HL('String', 'magenta', 'none')
@@ -80,8 +80,8 @@ call s:HL('Statement', 'black', 'none')
 call s:HL('StatusLine', 'white', 'black')
 call s:HL('LineNr', 'black', 'none')
 call s:HL('MatchParen', 'black', 'none')
-call s:HL('CursorLine', 'black', 'lgrey')
-call s:HL('Cursor', 'black', 'lgrey2')
+call s:HL('CursorLine', 'none', 'lgrey')
+call s:HL('Cursor', 'none', 'lgrey2')
 
 if has('nvim')
     call s:HL('@punctuation', 'black', 'none')
