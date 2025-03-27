@@ -81,7 +81,7 @@ call s:HL('StatusLine', 'white', 'black')
 call s:HL('LineNr', 'black', 'none')
 call s:HL('MatchParen', 'black', 'none')
 call s:HL('CursorLine', 'none', 'lgrey')
-call s:HL('Cursor', 'none', 'lgrey2')
+call s:HL('Cursor', 'black', 'lgrey2')
 
 if has('nvim')
     call s:HL('@punctuation', 'black', 'none')
