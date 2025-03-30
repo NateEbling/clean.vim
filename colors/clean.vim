@@ -70,7 +70,7 @@ endfunction
 " Highlights
 call s:HL('Normal', 'black', 'none')
 call s:HL('NonText', 'black', 'none')
-call s:HL('Type', 'lightgree', 'none', 'bold')
+call s:HL('Type', 'lightgreen', 'none', 'bold')
 call s:HL('Special', 'lightgreen', 'none', 'bold')
 call s:HL('Directory', 'black', 'none')
 call s:HL('String', 'magenta', 'none')
