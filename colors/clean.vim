@@ -71,7 +71,7 @@ endfunction
 call s:HL('Normal', 'black', 'none')
 call s:HL('NonText', 'black', 'none')
 call s:HL('Type', 'neongreen', 'none', 'bold')
-call s:HL('Special', 'black', 'none')
+call s:HL('Special', 'neongreen', 'none', 'bold')
 call s:HL('Directory', 'black', 'none')
 call s:HL('String', 'magenta', 'none')
 call s:HL('Visual', 'black', 'lgrey')
