@@ -18,7 +18,7 @@ let s:col              = {}
 let s:col.black        = ['#000000', 0]
 let s:col.blue         = ['#0000FF', 0]
 let s:col.green        = ['#008000', 0]
-let s:col.neongreen    = ['#00ff00', 0]
+let s:col.lightgreen    = ['00c600', 0]
 let s:col.magenta      = ['#BF00BF', 0]
 let s:col.orange       = ['#800080', 0]
 let s:col.white        = ['#FFFFFF', 0]
@@ -70,8 +70,8 @@ endfunction
 " Highlights
 call s:HL('Normal', 'black', 'none')
 call s:HL('NonText', 'black', 'none')
-call s:HL('Type', 'neongreen', 'none', 'bold')
-call s:HL('Special', 'neongreen', 'none', 'bold')
+call s:HL('Type', 'lightgree', 'none', 'bold')
+call s:HL('Special', 'lightgreen', 'none', 'bold')
 call s:HL('Directory', 'black', 'none')
 call s:HL('String', 'magenta', 'none')
 call s:HL('Visual', 'black', 'lgrey')
