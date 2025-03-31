@@ -24,6 +24,7 @@ let s:col.lightgreen   = ['#00c600', 0]
 let s:col.magenta      = ['#BF00BF', 0]
 let s:col.orange       = ['#800080', 0]
 let s:col.red          = ['#FF0000', 0]
+let s:col.brick        = ['#af3f3f', 0]
 let s:col.lgrey        = ['#EDEDED', 0]
 let s:col.dgrey        = ['#cecacd', 0]
 let s:col.none         = ['NONE', 'NONE']
@@ -74,7 +75,8 @@ call s:HL('NonText', 'black', 'white')
 call s:HL('Type', 'lightgreen', 'none', 'bold')
 call s:HL('Special', 'lightgreen', 'none', 'bold')
 call s:HL('Directory', 'black', 'none')
-call s:HL('String', 'magenta', 'none')
+call s:HL('String', 'brick', 'none')
+call s:HL('Number', 'brick', 'none')
 call s:HL('Visual', 'black', 'lgrey')
 call s:HL('ErrorMsg', 'red', 'none')
 call s:HL('Comment', 'lightblue', 'none')
