@@ -16,12 +16,12 @@ let g:colors_name="simple"
 " Colors
 let s:col              = {}
 let s:col.black        = ['#000000', 0]
+let s:col.white        = ['#FFFFFF', 0]
 let s:col.blue         = ['#0000FF', 0]
 let s:col.green        = ['#008000', 0]
 let s:col.lightgreen   = ['#00c600', 0]
 let s:col.magenta      = ['#BF00BF', 0]
 let s:col.orange       = ['#800080', 0]
-let s:col.white        = ['#FFFFFF', 0]
 let s:col.red          = ['#FF0000', 0]
 let s:col.lgrey        = ['#EDEDED', 0]
 let s:col.dgrey        = ['#cecacd', 0]
@@ -68,8 +68,8 @@ endfunction
 
 
 " Highlights
-call s:HL('Normal', 'black', 'none')
-call s:HL('NonText', 'black', 'none')
+call s:HL('Normal', 'black', 'white')
+call s:HL('NonText', 'black', 'white')
 call s:HL('Type', 'lightgreen', 'none', 'bold')
 call s:HL('Special', 'lightgreen', 'none', 'bold')
 call s:HL('Directory', 'black', 'none')
@@ -93,6 +93,7 @@ call s:HL('QuickFixLine', 'orange', 'none')
 if has('nvim')
     call s:HL('@punctuation', 'black', 'none')
     call s:HL('@variable', 'black', 'none')
+    call s:HL('@operator', 'black', 'none', 'bold')
 endif
 
 hi! link Statement Normal
