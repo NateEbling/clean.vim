@@ -18,6 +18,7 @@ let s:col              = {}
 let s:col.black        = ['#000000', 0]
 let s:col.white        = ['#FFFFFF', 0]
 let s:col.blue         = ['#0000FF', 0]
+let s:col.lightblue    = ['#6681d1', 0]
 let s:col.green        = ['#008000', 0]
 let s:col.lightgreen   = ['#00c600', 0]
 let s:col.magenta      = ['#BF00BF', 0]
@@ -76,9 +77,9 @@ call s:HL('Directory', 'black', 'none')
 call s:HL('String', 'magenta', 'none')
 call s:HL('Visual', 'black', 'lgrey')
 call s:HL('ErrorMsg', 'red', 'none')
-call s:HL('Comment', 'green', 'none')
+call s:HL('Comment', 'lightblue', 'none')
 call s:HL('Keyword', 'blue', 'none', 'bold')
-call s:HL('StatusLine', 'white', 'black')
+call s:HL('StatusLine', 'black', 'white')
 call s:HL('LineNr', 'black', 'none')
 call s:HL('MatchParen', 'black', 'none')
 call s:HL('CursorLine', 'none', 'none')
