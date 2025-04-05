@@ -17,6 +17,7 @@ let g:colors_name="simple"
 let s:col              = {}
 let s:col.black        = ['#000000', 0]
 let s:col.white        = ['#FFFFFF', 0]
+let s:col.beige        = ['#ffffea', 0]
 let s:col.blue         = ['#0000FF', 0]
 let s:col.lightblue    = ['#6681d1', 0]
 let s:col.green        = ['#008000', 0]
@@ -70,8 +71,8 @@ endfunction
 
 
 " Highlights
-call s:HL('Normal', 'black', 'white')
-call s:HL('NonText', 'black', 'white')
+call s:HL('Normal', 'black', 'beige')
+call s:HL('NonText', 'black', 'beige')
 call s:HL('Type', 'lightgreen', 'none', 'bold')
 call s:HL('Special', 'lightgreen', 'none', 'bold')
 call s:HL('Directory', 'black', 'none')
@@ -81,7 +82,8 @@ call s:HL('Visual', 'black', 'lgrey')
 call s:HL('ErrorMsg', 'red', 'none')
 call s:HL('Comment', 'lightblue', 'none')
 call s:HL('Keyword', 'blue', 'none', 'bold')
-call s:HL('StatusLine', 'black', 'white')
+call s:HL('StatusLine', 'black', 'beige')
+call s:HL('StatusLineNC', 'black', 'lgrey')
 call s:HL('LineNr', 'black', 'none')
 call s:HL('MatchParen', 'black', 'none')
 call s:HL('CursorLine', 'none', 'none')
