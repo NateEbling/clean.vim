@@ -74,7 +74,7 @@ endfunction
 call s:HL('Normal', 'black', 'beige')
 call s:HL('NonText', 'black', 'beige')
 call s:HL('Type', 'brick', 'none')
-call s:HL('Special', 'black', 'none')
+call s:HL('Special', 'brick', 'none')
 call s:HL('Directory', 'black', 'none')
 call s:HL('String', 'magenta', 'none')
 call s:HL('Number', 'magenta', 'none')
