@@ -106,6 +106,8 @@ if has('nvim')
     call s:HL('@number.rust', 'brick', 'none')
     call s:HL('@function.rust', 'blue', 'none')
     call s:HL('@keyword.type.rust', 'blue', 'none')
+    call s:HL('@punctuation.special.rust', 'brick', 'none')
+    call s:HL('@function.macro.rust', 'brick', 'none')
 endif
 
 hi! link Statement Normal
