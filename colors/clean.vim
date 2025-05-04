@@ -18,16 +18,17 @@ let s:col              = {}
 let s:col.black        = ['#000000', 0]
 let s:col.white        = ['#FFFFFF', 0]
 let s:col.beige        = ['#ffffea', 0]
-let s:col.blue         = ['#0000FF', 0]
+let s:col.dbeige       = ['#ccccba', 0]
+let s:col.blue         = ['#0030f2', 0]
 let s:col.lightblue    = ['#6681d1', 0]
-let s:col.green        = ['#008000', 0]
+let s:col.green        = ['#008200', 0]
 let s:col.lightgreen   = ['#00c600', 0]
-let s:col.magenta      = ['#BF00BF', 0]
+let s:col.magenta      = ['#b749ef', 0]
 let s:col.orange       = ['#800080', 0]
 let s:col.red          = ['#FF0000', 0]
-let s:col.brick        = ['#af3f3f', 0]
+let s:col.brick        = ['#b52b0e', 0]
 let s:col.lgrey        = ['#EDEDED', 0]
-let s:col.dgrey        = ['#cecacd', 0]
+let s:col.dgrey        = ['#5c5c5c', 0]
 let s:col.none         = ['NONE', 'NONE']
 let s:underline        = 'underline'
 
@@ -76,16 +77,16 @@ call s:HL('NonText', 'black', 'beige')
 call s:HL('Type', 'black', 'none')
 call s:HL('Special', 'black', 'none')
 call s:HL('Directory', 'black', 'none')
-call s:HL('String', 'magenta', 'none')
+call s:HL('String', 'green', 'none')
 call s:HL('Number', 'magenta', 'none')
 call s:HL('Visual', 'none', 'dgrey')
 call s:HL('ErrorMsg', 'red', 'none')
-call s:HL('Comment', 'green', 'none')
-call s:HL('Keyword', 'blue', 'none')
+call s:HL('Comment', 'dgrey', 'none')
+call s:HL('Keyword', 'magenta', 'none')
 call s:HL('StatusLine', 'beige', 'black')
 call s:HL('StatusLineNC', 'black', 'lgrey')
 call s:HL('LineNr', 'black', 'none')
-call s:HL('MatchParen', 'none', 'none', 'none')
+call s:HL('MatchParen', 'none', 'none', 'bold')
 call s:HL('CursorLine', 'none', 'none')
 call s:HL('Cursor', 'beige', 'black')
 call s:HL('Search', 'black', 'orange')
@@ -93,12 +94,18 @@ call s:HL('DiffChange', 'black', 'orange')
 call s:HL('DiffText', 'black', 'none')
 call s:HL('SpellBad', 'red', 'none')
 call s:HL('QuickFixLine', 'orange', 'none')
+call s:HL('ColorColumn', 'none', 'dbeige')
 
 " Treesitter
 if has('nvim')
     call s:HL('@punctuation', 'black', 'none')
     call s:HL('@variable', 'black', 'none')
     call s:HL('@operator', 'black', 'none')
+    " Rust
+    call s:HL('@boolean.rust', 'brick', 'none')
+    call s:HL('@number.rust', 'brick', 'none')
+    call s:HL('@function.rust', 'blue', 'none')
+    call s:HL('@keyword.type.rust', 'blue', 'none')
 endif
 
 hi! link Statement Normal
