@@ -132,3 +132,6 @@ hi! link Type Statement
 hi! link StorageClass Statement
 hi! link Structure Statement
 hi! link Typedef Statement
+
+" Telescope
+call s:HL('TelescopeSelection', 'none', 'dbeige')
