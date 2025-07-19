@@ -95,7 +95,7 @@ call s:HL('DiffText', 'black', 'none')
 call s:HL('SpellBad', 'red', 'none')
 call s:HL('QuickFixLine', 'orange', 'none')
 call s:HL('ColorColumn', 'none', 'dbeige')
-call s:HL('VertSplit', 'none', 'none')
+call s:HL('VertSplit', 'none', 'none', 'none', 'none', 'none')
 
 " Treesitter
 if has('nvim')
