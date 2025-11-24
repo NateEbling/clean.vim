@@ -82,6 +82,12 @@ hi MatchParen      guibg=#F6F7F6    guifg=black
 
 " Language-specific highlights
 " C
+hi link            cStructure       Structure
+hi link            cType            Type
+hi link            cNumbers         Number
+hi link            cFloat           Float
+hi link            cStatement       Keyword
+hi link            cStorageClass    Keyword
 
 " Rust
 hi link            rustStorage      Keyword
@@ -96,12 +102,12 @@ hi link            rustIdentifier   Function
 hi link            rustFuncName     Function 
 
 " Python
-hi link            pythonStatement  Keyword
-hi pythonFunction  guibg=#F6F7F6    guifg=#0030f2
-hi pythonNumber    guibg=#F6F7F6    guifg=#b21e00
+hi link            pythonFunction   Function
+hi link            pythonNumber     Number 
 hi link            pythonInclude    Keyword
 hi link            pythonConditional    Keyword
 hi link            pythonException  Keyword
+hi link            pythonStatement  Keyword
 " And finally.
 
 let g:colors_name = "clean"
