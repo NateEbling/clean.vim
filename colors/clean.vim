@@ -1,140 +1,108 @@
-" clean.vim
-" Maintainer: Nate Ebling
-"
-" To install for 
-" 1. Vim: copy to ~/.vim/colors dir
-" 2. Neovim: use your favorite package manager, e.g. with Lazy: { "NateEbling/clean.vim" }
+" Colorscheme by Nate Ebling
 
-" Setup
-hi clear
-if exists("syntax_on")
-  syntax reset
-endif
 set background=light
-let g:colors_name="simple"
+hi clear
+syntax reset
 
-" Colors
-let s:col              = {}
-let s:col.black        = ['#000000', 0]
-let s:col.white        = ['#FFFFFF', 0]
-let s:col.beige        = ['#ffffea', 0]
-let s:col.dbeige       = ['#ccccba', 0]
-let s:col.blue         = ['#0030f2', 0]
-let s:col.lightblue    = ['#6681d1', 0]
-let s:col.green        = ['#008200', 0]
-let s:col.lightgreen   = ['#00c600', 0]
-let s:col.magenta      = ['#9d00ec', 0]
-let s:col.orange       = ['#800080', 0]
-let s:col.red          = ['#FF0000', 0]
-let s:col.brick        = ['#b52b0e', 0]
-let s:col.lgrey        = ['#dbd9d9', 0]
-let s:col.dgrey        = ['#5c5c5c', 0]
-let s:col.none         = ['NONE', 'NONE']
-let s:underline        = 'underline'
+" Colors for the User Interface.
 
-" Highlighting Function from https://github.com/sjl/badwolf {{{
-function! s:HL(group, fg, ...)
-    " Arguments: group, guifg, guibg, gui, guisp
+hi Cursor          guibg=black      guifg=#F6F7F6
+hi CursorLine      guibg=black      guifg=#F6F7F6
+hi Normal          guibg=#F6F7F6    guifg=black
+hi NonText         guibg=#F6F7F6    guifg=#7f7f7f
+hi Visual          guibg=black      guifg=#F6F7F6
+hi Linenr          guibg=bg         guifg=#7f7f7f
+hi Directory       guibg=#F6F7F6    guifg=black
+hi IncSearch       guibg=#F6F7F6    guifg=black
+hi link            Search           IncSearch
 
-    let histring = 'hi ' . a:group . ' '
+hi SpecialKey      guibg=#F6F7F6    guifg=black
+hi Titled          guibg=#F6F7F6    guifg=black
 
-    if strlen(a:fg)
-        if a:fg == 'fg'
-            let histring .= 'guifg=fg ctermfg=fg '
-        else
-            let c = get(s:col, a:fg)
-            let histring .= 'guifg=' . c[0] . ' ctermfg=' . c[1] . ' '
-        endif
-    endif
+hi ErrorMsg        guibg=#F6F7F6    guifg=#ff0000
+hi ModeMsg         guibg=#F6F7F6    guifg=black
+hi link            MoreMsg          ModeMsg
+hi Question        guibg=#F6F7F6    guifg=black
+hi link            WarningMsg       ErrorMsg
 
-    if a:0 >= 1 && strlen(a:1)
-        if a:1 == 'bg'
-            let histring .= 'guibg=bg ctermbg=bg '
-        else
-            let c = get(s:col, a:1)
-            let histring .= 'guibg=' . c[0] . ' ctermbg=' . c[1] . ' '
-        endif
-    endif
+hi StatusLine      guibg=#F6F7F6    guifg=#black     cterm=none
+hi StatusLineNC    guibg=#757575    guifg=#F6F7F6    cterm=none
+hi VertSplit       guibg=#F6F7F6    guifg=black      cterm=none
 
-    if a:0 >= 2 && strlen(a:2)
-        let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
-    endif
+hi DiffAdd         guibg=#446688    guifg=fg
+hi DiffChange      guibg=#558855    guifg=fg
+hi DiffDelete      guibg=#884444    guifg=fg
+hi DiffText        guibg=#884444    guifg=fg
 
-    if a:0 >= 3 && strlen(a:3)
-        let c = get(s:col, a:3)
-        let histring .= 'guisp=' . c[0] . ' '
-    endif
+" Colors for Syntax Highlighting.
 
-    " echom histring
+hi Comment         guibg=#F6F7F6    guifg=#696969
 
-    execute histring
-endfunction
+hi Constant        guibg=#F6F7F6    guifg=#b21e00
+hi String          guibg=#F6F7F6    guifg=#008200
+hi Character       guibg=#F6F7F6    guifg=black
+hi Number          guibg=#F6F7F6    guifg=#b21e00
+hi Boolean         guibg=#F6F7F6    guifg=#b21e00
+hi Float           guibg=#F6F7F6    guifg=#b21e00
 
+hi Identifier      guibg=#F6F7F6    guifg=black
+hi Function        guibg=#F6F7F6    guifg=#0030f2
+hi Statement       guibg=#F6F7F6    guifg=black
 
-" Highlights
-call s:HL('Normal', 'black', 'beige')
-call s:HL('NonText', 'black', 'beige')
-call s:HL('Type', 'black', 'none')
-call s:HL('Special', 'black', 'none')
-call s:HL('Directory', 'black', 'none')
-call s:HL('String', 'green', 'none')
-call s:HL('Number', 'magenta', 'none')
-call s:HL('Visual', 'none', 'lgrey')
-call s:HL('ErrorMsg', 'red', 'none')
-call s:HL('Comment', 'dgrey', 'none')
-call s:HL('Keyword', 'magenta', 'none')
-call s:HL('StatusLine', 'beige', 'black')
-call s:HL('StatusLineNC', 'black', 'lgrey')
-call s:HL('LineNr', 'black', 'none')
-call s:HL('MatchParen', 'none', 'none', 'bold')
-call s:HL('CursorLine', 'none', 'none')
-call s:HL('Cursor', 'beige', 'black')
-call s:HL('Search', 'black', 'orange')
-call s:HL('DiffChange', 'black', 'orange')
-call s:HL('DiffText', 'black', 'none')
-call s:HL('SpellBad', 'red', 'none')
-call s:HL('QuickFixLine', 'orange', 'none')
-call s:HL('ColorColumn', 'none', 'dbeige')
-call s:HL('VertSplit', 'none', 'none', 'none', 'none', 'none')
+hi Conditional     guibg=#F6F7F6    guifg=#9d00ec
+hi Repeat          guibg=#F6F7F6    guifg=black
+hi Label           guibg=#F6F7F6    guifg=black
+hi Operator        guibg=#F6F7F6    guifg=black
+hi Keyword         guibg=#F6F7F6    guifg=#9d00ec
+hi Exception       guibg=#F6F7F6    guifg=#9d00ec
 
-" Treesitter
-if has('nvim')
-    call s:HL('@punctuation', 'black', 'none')
-    call s:HL('@variable', 'black', 'none')
-    call s:HL('@operator', 'black', 'none')
-    " Rust
-    call s:HL('@boolean.rust', 'brick', 'none')
-    call s:HL('@number.rust', 'brick', 'none')
-    call s:HL('@function.rust', 'blue', 'none')
-    call s:HL('@keyword.type.rust', 'blue', 'none')
-    call s:HL('@punctuation.special.rust', 'brick', 'none')
-    call s:HL('@function.macro.rust', 'brick', 'none')
-endif
+hi PreProc         guibg=#F6F7F6    guifg=#9d00ec
+hi Include         guibg=#F6F7F6    guifg=#9d00ec
+hi link            Define           Include
+hi link            Macro            Include
+hi link            PreCondit        Include
 
-hi! link Statement Normal
-hi! link Conditional Statement
-hi! link Repeat Statement
-hi! link Label Statement
-hi! link Exception Statement
-hi! link Operator Normal
-hi! link Function Statement
-hi! link Identifier Normal
+hi Type            guibg=#F6F7F6    guifg=#b21e00
+hi StorageClass    guibg=#F6F7F6    guifg=black
+hi Structure       guibg=#F6F7F6    guifg=#9d00ec
+hi Typedef         guibg=#F6F7F6    guifg=#9d00ec
 
-hi! link PreProc Normal
-hi! link Include PreProc
-hi! link Macro PreProc
-hi! link PreCondit PreProc
+hi Special         guibg=#F6F7F6    guifg=black
+hi SpecialChar     guibg=#F6F7F6    guifg=black
+hi Tag             guibg=#F6F7F6    guifg=black
+hi Delimiter       guibg=#F6F7F6    guifg=black
+hi SpecialComment  guibg=#F6F7F6    guifg=black
+hi Debug           guibg=#F6F7F6    guifg=black
 
-hi! link Constant Normal
-hi! link Character Normal
-hi! link Boolean Normal
-hi! link Number Normal
-hi! link Float Normal
+hi Title           guibg=#F6F7F6    guifg=black
+hi Ignore          guibg=#F6F7F6    guifg=black
+hi Error           guibg=#F6F7F6    guifg=#ff0000
+hi Todo            guibg=#F6F7F6    guifg=#ff0000
+hi MatchParen      guibg=#F6F7F6    guifg=black
 
-hi! link Type Statement
-hi! link StorageClass Statement
-hi! link Structure Statement
-hi! link Typedef Statement
+" Language-specific highlights
+" C
 
-" Telescope
-call s:HL('TelescopeSelection', 'none', 'dbeige')
+" Rust
+hi link            rustStorage      Keyword
+hi link            rustSelf         Keyword
+hi link            rustTrait        Number
+hi link            rustMacro        Number 
+hi link            rustType         Number 
+hi link            rustDecNumber    Number 
+hi link            rustAttribute    Number 
+hi link            rustDerive       Number 
+hi link            rustIdentifier   Function
+hi link            rustFuncName     Function 
+
+" Python
+hi link            pythonStatement  Keyword
+hi pythonFunction  guibg=#F6F7F6    guifg=#0030f2
+hi pythonNumber    guibg=#F6F7F6    guifg=#b21e00
+hi link            pythonInclude    Keyword
+hi link            pythonConditional    Keyword
+hi link            pythonException  Keyword
+" And finally.
+
+let g:colors_name = "clean"
+let colors_name   = "clean"
