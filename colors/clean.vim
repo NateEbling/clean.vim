@@ -25,9 +25,9 @@ hi link            MoreMsg          ModeMsg
 hi Question        guibg=#F6F7F6    guifg=black
 hi link            WarningMsg       ErrorMsg
 
-hi StatusLine      guibg=#F6F7F6    guifg=#black     cterm=none
+hi StatusLine      guibg=#F6F7F6    guifg=black     cterm=none
 hi StatusLineNC    guibg=#757575    guifg=#F6F7F6    cterm=none
-hi VertSplit       guibg=#F6F7F6    guifg=#black      cterm=none
+hi VertSplit       guibg=#F6F7F6    guifg=black      cterm=none
 
 hi DiffAdd         guibg=#446688    guifg=fg
 hi DiffChange      guibg=#558855    guifg=fg
